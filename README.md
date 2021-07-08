@@ -1,6 +1,6 @@
-# Functional Programming with Kotlin: Materials
+# Real-World Functional Programming with Kotlin: Materials
 
-This repo contains all the downloadable materials and projects associated with the **[Functional Programming with Kotlin](https://www.raywenderlich.com/books)** from [raywenderlich.com](https://www.raywenderlich.com).
+This repo contains all the downloadable materials and projects associated with the **[Real-World Functional Programming with Kotlin](https://www.raywenderlich.com/books)** from [raywenderlich.com](https://www.raywenderlich.com).
 
 Each edition has its own branch, named `editions/[EDITION]`. The default branch for this repo is for the most recent edition.
 
