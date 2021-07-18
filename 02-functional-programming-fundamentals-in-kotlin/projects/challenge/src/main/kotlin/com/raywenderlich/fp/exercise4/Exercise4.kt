@@ -27,50 +27,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.fp
+package com.raywenderlich.fp.exercise4
 
-/** Double the input */
-fun twice(a: Int): Int = a * 2
+import com.raywenderlich.fp.Fun
+import com.raywenderlich.fp.format
+import com.raywenderlich.fp.twice
 
-/** Format a string as a result */
-fun format(b: Int): String = "Result is $b"
-
-/** Returns the length of the String */
-fun length(s: String): Int = s.length
-
-/** Half the input */
-fun half(a: Int): Int = a / 2
-
-fun one(u: Unit): Int = 1
-fun two(u: Unit): Int = 2
-fun minusThree(u: Unit): Int = -3
-
-/**
- * Composing twice and format
- */
-fun formatAfterTwice(x: Int) = format(twice(x))
+/** This is the compose high order function */
+inline infix fun <A, B, C> Fun<A, B>.compose(crossinline g: Fun<B, C>): Fun<A, C> =
+  { a: A ->
+    g(this(a))
+  }
 
 fun main() {
-
-  println(format(twice(37)))
-  println(formatAfterTwice(37))
-
   val f: Fun<Int, Int> = ::twice
   val g: Fun<Int, String> = ::format
-  val formatTwice = g after f
+  val formatTwice = f compose g
   println(formatTwice(37))
-
-  val h: Fun<String, Int> = ::length
-  val leftSide = (h after g) after f
-  val rightSide = h after (g after f)
-  println(leftSide(37) == rightSide(37))
-
-  /*
-  val nothing = absurd<Int>(TODO())
-  println(nothing)
-  */
-
-  // twice(2)
-  val twiceTwo = ::twice after ::two
-  println(twiceTwo(Unit))
 }

@@ -30,7 +30,7 @@
 package com.raywenderlich.fp
 
 /** Double the input */
-fun double(a: Int): Int = a * 2
+fun twice(a: Int): Int = a * 2
 
 /** Format a string as a result */
 fun format(b: Int): String = "Result is $b"
@@ -38,17 +38,39 @@ fun format(b: Int): String = "Result is $b"
 /** Returns the length of the String */
 fun length(s: String): Int = s.length
 
+/** Half the input */
+fun half(a: Int): Int = a / 2
+
+fun one(u: Unit): Int = 1
+fun two(u: Unit): Int = 2
+fun minusThree(u: Unit): Int = -3
+
+/**
+ * Composing twice and format
+ */
+fun formatAfterTwice(x: Int) = format(twice(x))
+
 fun main() {
-  val f: Fun<Int, Int> = ::double
+
+  println(format(twice(37)))
+  println(formatAfterTwice(37))
+
+  val f: Fun<Int, Int> = ::twice
   val g: Fun<Int, String> = ::format
-  val formatDouble = g after f
-  println(formatDouble(37))
+  val formatTwice = g after f
+  println(formatTwice(37))
 
   val h: Fun<String, Int> = ::length
   val leftSide = (h after g) after f
   val rightSide = h after (g after f)
   println(leftSide(37) == rightSide(37))
 
+  /*
   val nothing = absurd<Int>(TODO())
   println(nothing)
+  */
+
+  // twice(2)
+  val twiceTwo = ::twice after ::two
+  println(twiceTwo(Unit))
 }

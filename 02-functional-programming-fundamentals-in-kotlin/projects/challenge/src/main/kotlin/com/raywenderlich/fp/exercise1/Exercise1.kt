@@ -27,50 +27,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.fp
+package com.raywenderlich.fp.exercise1
 
-/** Double the input */
-fun twice(a: Int): Int = a * 2
-
-/** Format a string as a result */
-fun format(b: Int): String = "Result is $b"
-
-/** Returns the length of the String */
-fun length(s: String): Int = s.length
-
-/** Half the input */
-fun half(a: Int): Int = a / 2
-
-fun one(u: Unit): Int = 1
-fun two(u: Unit): Int = 2
-fun minusThree(u: Unit): Int = -3
+import com.raywenderlich.fp.Fun
 
 /**
- * Composing twice and format
+ * This is an example of a function mapping distinct values
+ * in the domain to not distinct values in the range.
+ * As you'll see also in the remaining of the book, a function
+ * mapping any type A to a Boolean has a name: Predicate
  */
-fun formatAfterTwice(x: Int) = format(twice(x))
+fun isEven(x: Int): Boolean = x % 2 == 0
+
+/** Predicate function type */
+typealias Predicate<A> = Fun<A, Boolean> // (A) -> Boolean
+
 
 fun main() {
-
-  println(format(twice(37)))
-  println(formatAfterTwice(37))
-
-  val f: Fun<Int, Int> = ::twice
-  val g: Fun<Int, String> = ::format
-  val formatTwice = g after f
-  println(formatTwice(37))
-
-  val h: Fun<String, Int> = ::length
-  val leftSide = (h after g) after f
-  val rightSide = h after (g after f)
-  println(leftSide(37) == rightSide(37))
-
-  /*
-  val nothing = absurd<Int>(TODO())
-  println(nothing)
-  */
-
-  // twice(2)
-  val twiceTwo = ::twice after ::two
-  println(twiceTwo(Unit))
+  println(isEven(2))
+  println(isEven(-2))
+  println(isEven(12))
+  println(isEven(18))
+  println(isEven(19))
+  println(isEven(-3))
+  println(isEven(1))
+  println(isEven(-5))
 }

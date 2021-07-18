@@ -27,50 +27,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.fp
+package com.raywenderlich.fp.exercise2
 
-/** Double the input */
-fun twice(a: Int): Int = a * 2
+/** First version of twice of type Fun<Int, Int> */
+fun twice(x: Int) = 2 * x
 
-/** Format a string as a result */
-fun format(b: Int): String = "Result is $b"
+/** Second version of twice of type Fun<Double, Double> */
+fun twice(x: Double) = 2 * x
 
-/** Returns the length of the String */
-fun length(s: String): Int = s.length
+/** First version of half of type Fun<Int, Int> */
+fun half(x: Int) = x / 2
 
-/** Half the input */
-fun half(a: Int): Int = a / 2
-
-fun one(u: Unit): Int = 1
-fun two(u: Unit): Int = 2
-fun minusThree(u: Unit): Int = -3
-
-/**
- * Composing twice and format
- */
-fun formatAfterTwice(x: Int) = format(twice(x))
-
-fun main() {
-
-  println(format(twice(37)))
-  println(formatAfterTwice(37))
-
-  val f: Fun<Int, Int> = ::twice
-  val g: Fun<Int, String> = ::format
-  val formatTwice = g after f
-  println(formatTwice(37))
-
-  val h: Fun<String, Int> = ::length
-  val leftSide = (h after g) after f
-  val rightSide = h after (g after f)
-  println(leftSide(37) == rightSide(37))
-
-  /*
-  val nothing = absurd<Int>(TODO())
-  println(nothing)
-  */
-
-  // twice(2)
-  val twiceTwo = ::twice after ::two
-  println(twiceTwo(Unit))
-}
+/** Second version of half of type Fun<Double, Double> */
+fun half(x: Double): Double = x / 2

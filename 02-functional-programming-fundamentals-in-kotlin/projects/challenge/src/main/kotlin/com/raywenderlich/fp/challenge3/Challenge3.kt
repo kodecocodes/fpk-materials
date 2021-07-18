@@ -59,5 +59,5 @@ fun oneOver(x: NonZeroInt): Double = 1.0 / x.value
 
 fun main() {
   println("1/3 = ${oneOver(NonZeroInt(3))}")
-  //println("1/0 = ${oneOver(NonZeroInt(0))}")
+  println("1/0 = ${oneOver(NonZeroInt(0))}")
 }
