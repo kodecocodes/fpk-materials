@@ -30,7 +30,7 @@
 package com.raywenderlich.fp
 
 /** This is the after high order function */
-inline infix fun <B, C, A> Fun<B, C>.after(crossinline f: Fun<A, B>): Fun<A, C> =
+inline infix fun <A, B, C> Fun<B, C>.after(crossinline f: Fun<A, B>): Fun<A, C> =
   { a: A ->
     this(f(a))
   }
