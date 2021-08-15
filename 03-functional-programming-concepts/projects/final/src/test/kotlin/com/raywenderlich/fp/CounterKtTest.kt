@@ -36,7 +36,6 @@ import com.google.common.truth.Truth.assertThat
 import com.raywenderlich.fp.util.invokeTimes
 import org.junit.Test
 
-
 class CounterKtTest {
   /*
   @Test

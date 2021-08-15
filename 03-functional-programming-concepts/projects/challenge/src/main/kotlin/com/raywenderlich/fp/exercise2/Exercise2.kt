@@ -33,7 +33,7 @@ val count = 0
 
 /**
  * This function is not so obvious but it's pure because it always returns the
- * same value in output for the same values in input. It uses count which is a val and do
+ * same value in output for the same values in input. It uses count which is a val and so
  * it doesn't change at every inc2 invocation.
  * In this case the name of the function is probably misleading because there's
  * no increment involved
