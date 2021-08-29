@@ -40,3 +40,33 @@ fun half(x: Int) = x / 2
 
 /** Second version of half of type Fun<Double, Double> */
 fun half(x: Double): Double = x / 2
+
+fun main() {
+  println("First version using Int")
+
+  println("\nhalf after twice")
+  println("x=0,  result=${half(twice(0))}")
+  println("x=1,  result=${half(twice(1))}")
+  println("x=2,  result=${half(twice(2))}")
+  println("x=3,  result=${half(twice(3))}")
+
+  println("\ntwice after half")
+  println("x=0, result=${twice(half(0))}")
+  println("x=1, result=${twice(half(1))}")
+  println("x=2, result=${twice(half(2))}")
+  println("x=3, result=${twice(half(3))}")
+
+  println("\nSecond version using Double")
+
+  println("\nhalf after twice")
+  println("x=0.0, result=${half(twice(0.0))}")
+  println("x=1.0, result=${half(twice(1.0))}")
+  println("x=2.0, result=${half(twice(2.0))}")
+  println("x=3.0, result=${half(twice(3.0))}")
+
+  println("\ntwice after half")
+  println("x=0.0, result=${twice(half(0.0))}")
+  println("x=1.0, result=${twice(half(1.0))}")
+  println("x=2.0, result=${twice(half(2.0))}")
+  println("x=3.0, result=${twice(half(3.0))}")
+}

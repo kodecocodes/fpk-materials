@@ -70,7 +70,7 @@ fun main() {
   println(nothing)
   */
 
-  // twice(2)
+  // twice 2
   val twiceTwo = ::twice after ::two
   println(twiceTwo(Unit))
 }
