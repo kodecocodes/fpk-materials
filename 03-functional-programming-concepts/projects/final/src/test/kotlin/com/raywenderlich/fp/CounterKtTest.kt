@@ -58,7 +58,7 @@ class CounterKtTest {
    */
 
   @Test
-  fun test50TimesBis() {
+  fun test50TimesAbs() {
     var c = 0
     50.invokeTimes {
       val (count, _) = countedAbs(c, it)
@@ -68,7 +68,7 @@ class CounterKtTest {
   }
 
   @Test
-  fun test100TimesBis() {
+  fun test100TimesAbs() {
     var c = 0
     100.invokeTimes {
       val (count, _) = countedAbs(c, it)

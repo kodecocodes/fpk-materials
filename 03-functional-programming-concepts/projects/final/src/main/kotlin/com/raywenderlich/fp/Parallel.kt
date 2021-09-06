@@ -40,10 +40,15 @@ fun square(x: Double): Double = x * x
 fun root(x: Double): Double = Math.sqrt(x)
 
 /**
- * Calculate the distance between two points in the plan
+ * Calculate the distance between two points in the plane
  */
-fun distance(x0: Double, x1: Double, y0: Double, y1: Double): Double {
+fun distance(
+  x0: Double,
+  x1: Double,
+  y0: Double,
+  y1: Double
+): Double {
   val s1 = square(x1 - x0)
   val s2 = square(y1 - y0)
-  return Math.sqrt(s1 + s2)
+  return root(s1 + s2)
 }

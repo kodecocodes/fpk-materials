@@ -30,7 +30,17 @@
 package com.raywenderlich.fp.exercise5
 
 import com.raywenderlich.fp.Writer
+import com.raywenderlich.fp.after
+
+infix fun <A, B, C> Writer<A, B>.compose(
+  w: Writer<B, C>
+): Writer<A, C> = w after this
 
 /** Identity for Writer<A, A> */
 fun <A> id(a: A): Writer<A, A> = { a -> a to "" }
 
+fun <A, B, C> Writer<B, C>.after(): Writer<A, C> = { a: A ->
+  val (b, str) = id(a) // use id in place of w
+  val (c, str2) = this(b)
+  c to "$str\n$str2\n"
+}

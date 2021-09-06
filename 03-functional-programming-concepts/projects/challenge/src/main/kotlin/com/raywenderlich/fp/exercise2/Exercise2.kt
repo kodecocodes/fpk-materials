@@ -32,9 +32,14 @@ package com.raywenderlich.fp.exercise2
 val count = 0
 
 /**
- * This function is not so obvious but it's pure because it always returns the
- * same value in output for the same values in input. It uses count which is a val and so
- * it doesn't change at every inc2 invocation.
+ * This function isn't so obvious, but it _is_ pure because
+ * it always returns the same value in output for the same
+ * value in input. It uses `count`, which is part of the
+ * universe, but it's a `val`, so it never changes. You can
+ * see `count` as part of the universe's state but, because
+ * it's immutable, it can't be the consequence of any side
+ * effect, and it wont change the output.
+ *
  * In this case the name of the function is probably misleading because there's
  * no increment involved
  */

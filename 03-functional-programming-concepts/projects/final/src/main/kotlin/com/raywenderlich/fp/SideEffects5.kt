@@ -30,8 +30,13 @@
 package com.raywenderlich.fp
 
 /** Lift function to  Writer<A, B> */
-fun <A, B> Fun<A, B>.liftW(log: (A, B) -> String): Writer<A, B> =
-  { a: A -> val b = this(a); b to log(a, b) }
+fun <A, B> Fun<A, B>.liftW(
+  log: (A, B) -> String
+): Writer<A, B> =
+  { a: A ->
+    val b = this(a)
+    b to log(a, b)
+  }
 
 fun main() {
   val shiftLeftAndLog = ::shiftLeft.liftW { a, _ ->

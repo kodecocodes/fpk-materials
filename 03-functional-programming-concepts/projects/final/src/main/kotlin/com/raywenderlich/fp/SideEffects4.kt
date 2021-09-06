@@ -43,14 +43,17 @@ fun notWithEffect(x: Int): Pair<Int, String> {
 typealias Writer<A, B> = (A) -> Pair<B, String>
 
 /** Writer<A, B> composition */
-infix fun <A, B, C> Writer<B, C>.after(w: Writer<A, B>): Writer<A, C> = { a: A ->
+infix fun <A, B, C> Writer<B, C>.after(
+  w: Writer<A, B>
+): Writer<A, C> = { a: A ->
   val (b, str) = w(a)
   val (c, str2) = this(b)
   c to "$str\n$str2\n"
 }
 
-infix fun <A, B, C> Writer<A, B>.compose(w: Writer<B, C>): Writer<A, C> =
-  w after this
+infix fun <A, B, C> Writer<A, B>.compose(
+  w: Writer<B, C>
+): Writer<A, C> = w after this
 
 fun main() {
   val f: Writer<Int, Int> = ::shiftLeftWithEffect // 1

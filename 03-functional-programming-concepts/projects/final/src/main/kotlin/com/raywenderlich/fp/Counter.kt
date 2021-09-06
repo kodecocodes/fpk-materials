@@ -37,6 +37,6 @@ fun countedAbs(x: Int): Int {
 }
 
 /**
- * This function allow you to count
+ * This function allows you to count invocations of [abs].
  */
 fun countedAbs(count: Int, a: Int): Pair<Int, Int> = abs(a) to count + 1

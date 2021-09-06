@@ -41,9 +41,9 @@ fun main() {
   assertOrThrow("expr1 is not RT") {
     a1 == a1Eval && a2 == a2Eval
   }
+
   /*
-  // Uncomment when running Exercise 1
-  // Example 1 with referential opaque
+  // Uncomment when running example with referential opaque
   var count = 1
   val expr2 = { 3 * 10 * ++count }
   val (b1, b2) = expr2() to expr2()
@@ -56,10 +56,10 @@ fun main() {
 
   // Example 2
   val expr3 = { println("Hello World!") }
-  //val (c1, c2) = expr3() to expr3()
+  val (c1, c2) = expr3() to expr3()
   val expr3Eval = expr3()
   val (c1Eval, c2Eval) = expr3Eval to expr3Eval
   assertOrThrow("expr2 is not RT") {
-    true//c1 == c1Eval && c2 == c2Eval
+    c1 == c1Eval && c2 == c2Eval
   }
 }
