@@ -59,7 +59,7 @@ fun testDelegate() {
 
 
 fun multiLazy() {
-  val multiLambda by lazy() { println("I'm MultiLambda") }
+  val multiLambda by lazy { println("I'm MultiLambda") }
   multiLambda
   multiLambda
   multiLambda
