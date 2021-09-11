@@ -32,14 +32,15 @@ package com.raywenderlich.fp.challenge1
 var count = 0
 
 /**
- * Also in this case the answer is not so obvious. Every time you invoke
- * inc3 you calculate a result incrementing count which is a global variable.
- * You then print the result and decrement the global variable count before
- * returning the result. The println makes this function NOT pure. But what about if
- * you remove the println()? Is the function still NOT pure?
- * The function is still NOT pure because it changes the values of count while
- * executing. If you invoke another function in another thread accessing the same
- * count variable you might have some unexpected results because of some race condition.
+ * The answer, in this case, isn’t so obvious. Every time you invoke inc3, you calculate a
+ * result incrementing count, a global variable. You then print the result and decrement
+ * the global variable count before returning the result. println makes this function
+ * impure.
+ *
+ * But what if you remove the println? Is the function still impure? The function is still
+ * impure because it changes the values of count while executing. If you invoke another
+ * function in another thread accessing the same count variable, a race condition might
+ * cause some unexpected results.
  */
 fun inc3(x: Int): Int {
   val result = x + ++count + 1

@@ -37,10 +37,18 @@ infix fun <A, B, C> Writer<A, B>.compose(
 ): Writer<A, C> = w after this
 
 /** Identity for Writer<A, A> */
-fun <A> id(a: A): Writer<A, A> = { a -> a to "" }
+fun <A> id(): Writer<A, A> = { a -> a to "" }
 
-fun <A, B, C> Writer<B, C>.after(): Writer<A, C> = { a: A ->
-  val (b, str) = id(a) // use id in place of w
+fun <A, C> Writer<A, C>.after(): Writer<A, C> = { a: A ->
+  val (b, str) = id<A>()(a)
   val (c, str2) = this(b)
   c to "$str\n$str2\n"
+}
+
+infix fun <A, C> Writer<A, C>.after(
+  w: Writer<A, C>
+): Writer<A, C> = { a: A ->
+  val (b, str) = w(a)
+  val (c, str2) = id<C>()(b)
+  c to "$str$str2\n"
 }
