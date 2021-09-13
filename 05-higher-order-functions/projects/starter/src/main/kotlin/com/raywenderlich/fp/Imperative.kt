@@ -28,3 +28,19 @@
  */
 
 package com.raywenderlich.fp
+
+val emails = listOf(
+  "email@emmmaail.com",
+  "max@fgh.it",
+  "hsajdkjshh",
+  "mike@mcarli.it",
+  "first.second@ggg.com",
+  "test@test.co.uk",
+  "12345@qqq.com",
+  "123.45",
+  "12345@a.b.c.d",
+  "fp_is_great@funprog.com",
+  "aaaaaaaaa.bbbbb@cccc.com",
+  "aaaaaaacccc.com",
+  "valid@jjjj.lll",
+)
