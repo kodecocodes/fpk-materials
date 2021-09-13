@@ -44,3 +44,4 @@ val emails = listOf(
   "aaaaaaacccc.com",
   "valid@jjjj.lll",
 )
+val EMAIL_REG_EX = "^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})".toRegex()
