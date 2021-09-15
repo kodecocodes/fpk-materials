@@ -32,7 +32,7 @@ package com.raywenderlich.fp
 /** Higher order function which counts starting from a given value */
 fun countFrom(start: Int): () -> Int {
   var count = start
-  return { ->
+  return {
     count++
   }
 }

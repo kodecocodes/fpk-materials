@@ -50,13 +50,13 @@ fun <T> swap(values: Array<T>, i: Int, j: Int) {
 /** Prints all the values in the IntArray */
 fun IntArray.printAll() {
   this.forEach {
-    print(" ${it}")
+    print(" $it")
   }
 }
 
 /** Prints all the values in the array */
 fun <T> Array<out T>.printAll() {
   this.forEach {
-    print(" ${it}")
+    print(" $it")
   }
 }
