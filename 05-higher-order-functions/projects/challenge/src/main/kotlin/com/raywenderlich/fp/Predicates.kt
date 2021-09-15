@@ -35,17 +35,17 @@ fun interface Predicate1<T> {
 }
 
 fun <T> T.isEqualsPredicate1(): Predicate1<T> =
-  Predicate1<T> { value -> this == value }
+  Predicate1 { value -> this == value }
 
 /** Logical and */
 infix fun <T> Predicate1<T>.and(other: Predicate1<T>): Predicate1<T> =
-  Predicate1<T> { value ->
+  Predicate1 { value ->
     this.accept(value) && other.accept(value)
   }
 
 /** Logical or */
 infix fun <T> Predicate1<T>.or(other: Predicate1<T>): Predicate1<T> =
-  Predicate1<T> { value ->
+  Predicate1 { value ->
     this.accept(value) || other.accept(value)
   }
 

@@ -44,7 +44,7 @@ fun <T> T.isEqualsPredicate(): (T) -> Boolean =
  * Returns a SinglePredicate which compares the given value with another
  */
 fun <T> T.isEqualsIPredicate(): SinglePredicate<T> =
-  SinglePredicate<T> { value -> this == value }
+  SinglePredicate { value -> this == value }
 
 
 fun main() {
