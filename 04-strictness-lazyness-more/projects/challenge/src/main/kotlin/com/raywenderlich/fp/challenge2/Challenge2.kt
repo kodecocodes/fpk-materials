@@ -31,7 +31,7 @@ package com.raywenderlich.fp.challenge2
 
 import com.raywenderlich.fp.times
 
-/** Sequence of eulero numbers approximation */
+/** Sequence of Euler's number approximations */
 fun e(): () -> Double {
   var currentSum = 1.0
   var n = 1

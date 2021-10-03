@@ -32,9 +32,22 @@ package com.raywenderlich.fp.exercise2
 import com.raywenderlich.fp.exercise1.Point
 
 /** The type for distanceLambda in exercise 1 */
-typealias DistanceLambdaType = (Double, Double, Double, Double) -> Double
+val distanceLambda: (Double, Double, Double, Double) -> Double = { x1: Double, y1: Double, x2: Double, y2: Double ->
+  val sqr1 = (x2 - x1) * (x2 - x1)
+  val sqr2 = (y2 - y1) * (y2 - y1)
+  Math.sqrt(sqr1 + sqr2)
+}
 
 /** The type for distanceLambdaWithPairs in exercise 1 */
 typealias Point = Pair<Double, Double>
-typealias DistanceLambdaWithPairsType = (Point, Point) -> Double
-typealias DistanceLambdaWithPairsType2 = (Pair<Double, Double>, Pair<Double, Double>) -> Double
+
+val distanceLambdaWithPairs: (Point, Point) -> Double = { p1: Point, p2: Point ->
+  val sqr1 = Math.pow(p1.first - p2.first, 2.0)
+  val sqr2 = Math.pow(p1.second - p2.second, 2.0)
+  Math.sqrt(sqr1 + sqr2)
+}
+val distanceLambdaWithPairs2: (Pair<Double, Double>, Pair<Double, Double>) -> Double = { p1: Point, p2: Point ->
+  val sqr1 = Math.pow(p1.first - p2.first, 2.0)
+  val sqr2 = Math.pow(p1.second - p2.second, 2.0)
+  Math.sqrt(sqr1 + sqr2)
+}

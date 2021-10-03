@@ -30,18 +30,18 @@
 package com.raywenderlich.fp.exercise1
 
 /** Distance passing all the parameters */
-val distanceLambda = { x0: Double, y0: Double, x1: Double, y1: Double ->
-  val sqr1 = (x1 - x0) * (x1 - x0)
-  val sqr2 = (y1 - y0) * (y1 - y0)
+val distanceLambda = { x1: Double, y1: Double, x2: Double, y2: Double ->
+  val sqr1 = (x2 - x1) * (x2 - x1)
+  val sqr2 = (y2 - y1) * (y2 - y1)
   Math.sqrt(sqr1 + sqr2)
 }
 
 typealias Point = Pair<Double, Double>
 
 /** Distance using Points */
-val distanceLambdaWithPairs = { p0: Point, p1: Point ->
-  val sqr1 = Math.pow(p0.first - p1.first, 2.0)
-  val sqr2 = Math.pow(p0.second - p1.second, 2.0)
+val distanceLambdaWithPairs = { p1: Point, p2: Point ->
+  val sqr1 = Math.pow(p1.first - p2.first, 2.0)
+  val sqr2 = Math.pow(p1.second - p2.second, 2.0)
   Math.sqrt(sqr1 + sqr2)
 }
 

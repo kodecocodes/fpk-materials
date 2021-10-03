@@ -34,15 +34,14 @@ fun eagerEvenSequence(n: Int): List<Int> = List(n) { i -> i * 2 }
 
 fun evenPositiveStream(): () -> Int {
   var count = -2
-  return { -> count += 2; count }
+  return { count += 2; count }
 }
 
 fun main() {
   println(eagerEvenSequence(5))
-  /*
+
   val evenSequence = evenPositiveStream()
   5.times {
     println(evenSequence())
   }
-  */
 }

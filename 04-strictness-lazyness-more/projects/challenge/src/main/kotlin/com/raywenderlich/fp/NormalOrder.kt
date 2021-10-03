@@ -43,7 +43,7 @@ fun divideL(x: () -> Int, y: () -> Int): () -> Int {
 }
 
 fun averageL(x: () -> Int, y: () -> Int): () -> Int {
-  return { println("averageL");divideL(addL(x, y), { 2 })() }
+  return { println("averageL"); divideL(addL(x, y), { 2 })() }
 }
 
 fun main() {

@@ -38,12 +38,11 @@ var operation: (Int, Int) -> Int = { a, b -> a + b }
 
 val testLambda = { a: Int ->
   val doubleA = a * 2
-  if (doubleA > 10) "$doubleA is Greater that 10"
-  else "$doubleA is Smaller or Equals to 10"
+  if (doubleA > 10) "$doubleA is Greater than 10"
+  else "$doubleA is Smaller or Equal to 10"
 }
 
 val multiplyBy2: Fun<Int, Int> = { x -> 2 * x }
-
 
 class A : C()
 open class C
@@ -53,7 +52,7 @@ open class B
 typealias LambdaType = (A) -> B
 
 //    C -> D
-//    ^   v
+//    ^    v
 //    A -> B
 
 interface Combinable<A> {
@@ -62,7 +61,7 @@ interface Combinable<A> {
 
 fun <A : Combinable<A>> combine(lh: A, rh: A): A = lh.combine(rh)
 
-// val combineLambda = { lh: A, rh: A -> lh.append(rh) } // NOT WORKING
+// val combineLambda = { lh: A, rh: A -> lh.combine(rh) } // NOT WORKING
 
 /*
 // NOT VALID

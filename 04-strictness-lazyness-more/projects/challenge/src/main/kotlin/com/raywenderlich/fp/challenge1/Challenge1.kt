@@ -45,7 +45,8 @@ fun <A> myNullableLazy(fn: () -> A?): () -> A? {
 }
 
 fun main() {
-  val myNullableLazy: () -> Int? = myNullableLazy { println("I'm nullable lazy!"); null }
+  val myNullableLazy: () -> Int? =
+    myNullableLazy { println("I'm nullable lazy!"); null }
   3.times {
     println(myNullableLazy())
   }

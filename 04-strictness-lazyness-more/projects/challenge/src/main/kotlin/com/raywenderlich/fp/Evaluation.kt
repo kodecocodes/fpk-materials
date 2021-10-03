@@ -53,12 +53,7 @@ fun average(x: Int, y: Int): Int {
   return result
 }
 
-//def triple x =plus((plus x x) x)
-//def average x y = (divide (plus x y) 2)
-
-// (double (average 2 4))
 fun main() {
   val result = triple(average(2, 4))
   println(result)
-  //doubleL(averageL({ 2 }, { 4 }))()
 }

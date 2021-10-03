@@ -29,17 +29,13 @@
 
 package com.raywenderlich.fp.exercise3
 
-val emptyLambda = {}
-typealias emptyLambdaType = () -> Unit
+val emptyLambda: () -> Unit = {}
 
-val helloWorldLambda = { "Hello World!" }
-typealias helloWorldLambdaType = () -> String
+val helloWorldLambda: () -> String = { "Hello World!" }
 
-val helloLambda = { name: String -> "Hello $name!" }
-typealias helloLambdaType = (String) -> String
+val helloLambda: (String) -> String = { name: String -> "Hello $name!" }
 
-val nothingLambda = { TODO("Do exercise 4.3!") }
-typealias nothingLambdaType = () -> Nothing
+val nothingLambda: () -> Nothing = { TODO("Do exercise 4.3!") }
 
 typealias AbsurdType = (Nothing) -> Nothing
 

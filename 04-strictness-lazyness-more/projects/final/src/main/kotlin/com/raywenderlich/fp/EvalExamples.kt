@@ -34,14 +34,8 @@ fun neverEnding(): Int {
   }
 }
 
-fun <A> myStrictIf(test: () -> Boolean, option1: A, option2: A): A =
-  if (test()) {
-    option1
-  } else {
-    option2
-  }
+fun double(x: Int): Int = x + x
 
 fun main() {
-  val inputValue = 4
-  myStrictIf({ inputValue < 0 }, -1, neverEnding())
+  double(neverEnding())
 }
