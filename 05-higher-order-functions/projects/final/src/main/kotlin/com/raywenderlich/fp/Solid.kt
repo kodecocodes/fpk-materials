@@ -34,12 +34,10 @@ fun interface CharReader {
   fun readChar(): Char?
 }
 
-
 /** A functional interface for reading a String at the time */
 fun interface StringReader {
   fun readString(charReader: CharReader): String
 }
-
 
 val stringReader = StringReader { charReader ->
   val result = StringBuilder()
@@ -59,7 +57,6 @@ fun String.toCharReader(): CharReader {
     if (pos < this.length) this[pos++] else null
   }
 }
-
 
 fun main() {
   println(stringReader.readString("This is String!".toCharReader()))
