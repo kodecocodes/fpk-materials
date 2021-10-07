@@ -41,13 +41,13 @@ fun noTailRecFactorial(n: Int, fact: Int = 1): Int = when (n) {
 
 fun main() {
   val times = 1000000
-  println(chrono(times) {
+  println("recursiveFactorial ${chrono(times) {
     recursiveFactorial(50)
-  })
-  println(chrono(times) {
+  }}")
+  println("tailRecFactorial   ${chrono(times) {
     tailRecFactorial(50)
-  })
-  println(chrono(times) {
+  }}")
+  println("noTailRecFactorial ${chrono(times) {
     noTailRecFactorial(50)
-  })
+  }}")
 }

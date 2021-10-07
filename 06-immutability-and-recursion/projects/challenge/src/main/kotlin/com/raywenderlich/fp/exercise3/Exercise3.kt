@@ -40,5 +40,5 @@ fun moveDisk(disks: Int, from: Int, to: Int, using: Int) {
 }
 
 fun main() {
-  moveDisk(4, 1, 3, 2)
+  moveDisk(disks = 4, from = 1, to = 3, using = 2)
 }

@@ -70,7 +70,7 @@ fun main() {
  */
 
 fun main() {
-  var counter = Counter()
+  val counter = Counter()
   lateinit var counter1: Counter
   val th1 = thread {
     counter1 = incAndCheck(counter)

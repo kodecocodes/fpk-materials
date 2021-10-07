@@ -33,7 +33,7 @@ package com.raywenderlich.fp
 import kotlin.concurrent.thread
 
 @Synchronized
-fun synchedMutableIncAndCheck(counter: MutableCounter) {
+fun syncedMutableIncAndCheck(counter: MutableCounter) {
   randomDelay()
   counter.count++
   randomDelay()
@@ -45,9 +45,9 @@ fun synchedMutableIncAndCheck(counter: MutableCounter) {
 fun main() {
   val counter = MutableCounter()
   thread {
-    synchedMutableIncAndCheck(counter)
+    syncedMutableIncAndCheck(counter)
   }
   thread {
-    synchedMutableIncAndCheck(counter)
+    syncedMutableIncAndCheck(counter)
   }
 }
