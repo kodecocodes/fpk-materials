@@ -44,10 +44,11 @@ fun <T> FList<T>.firstWhen(predicate: Predicate<T>): T? =
 fun <T> FList<T>.fastFirstWhen(predicate: Predicate<T>): T? = match(
   whenNil = { null },
   whenCons = { head, tail ->
-    if (predicate(head))
+    if (predicate(head)) {
       head
-    else
+    } else {
       tail.fastFirstWhen(predicate)
+    }
   }
 )
 

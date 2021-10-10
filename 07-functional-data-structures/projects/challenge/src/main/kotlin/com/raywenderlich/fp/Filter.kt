@@ -36,10 +36,11 @@ typealias Predicate<T> = (T) -> Boolean
 fun <T> FList<T>.filter(predicate: Predicate<T>): FList<T> = match(
   whenNil = { FList.empty() },
   whenCons = { head, tail ->
-    if (predicate(head))
+    if (predicate(head)) {
       FCons(head, tail.filter(predicate))
-    else
+    } else {
       tail.filter(predicate)
+    }
   }
 )
 

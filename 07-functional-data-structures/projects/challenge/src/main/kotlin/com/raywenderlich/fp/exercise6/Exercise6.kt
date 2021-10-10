@@ -37,10 +37,11 @@ import com.raywenderlich.fp.match
 fun <T> FList<T>.take(n: Int): FList<T> = match(
   whenNil = { FList.empty() },
   whenCons = { head, tail ->
-    if (n > 0)
+    if (n > 0) {
       FCons(head, tail.take(n - 1))
-    else
+    } else {
       FList.empty()
+    }
   }
 )
 

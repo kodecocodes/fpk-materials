@@ -49,8 +49,7 @@ internal data class FCons<T>(val head: T, val tail: FList<T> = Nil) : FList<T>
 fun <T, S> FList<T>.match(
   whenNil: () -> S,
   whenCons: (head: T, tail: FList<T>) -> S
-) =
-  when (this) {
-    is Nil -> whenNil()
-    is FCons<T> -> whenCons(head, tail)
-  }
+) = when (this) {
+  is Nil -> whenNil()
+  is FCons<T> -> whenCons(head, tail)
+}
