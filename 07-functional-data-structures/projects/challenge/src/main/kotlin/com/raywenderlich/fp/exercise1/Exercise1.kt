@@ -37,8 +37,8 @@ import com.raywenderlich.fp.match
 
 /** It returns true when the receiver is Nil and false otherwise */
 fun <T> FList<T>.isEmpty(): Boolean = match(
-  whenNil = { false },
-  whenCons = { _, _ -> true }
+  whenNil = { true },
+  whenCons = { _, _ -> false }
 )
 
 fun main() {

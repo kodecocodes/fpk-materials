@@ -32,7 +32,7 @@ package com.raywenderlich.fp
 /*
 fun <T> FList<T>.size(): Int = when (this) {
   is Nil -> 0
-  is Cons<T> -> 1 + tail.size
+  is FCons<T> -> 1 + tail.size()
 }
  */
 
