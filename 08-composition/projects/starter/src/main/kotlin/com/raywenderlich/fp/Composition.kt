@@ -29,3 +29,18 @@
  */
 
 package com.raywenderlich.fp
+
+/** Any function from A to B */
+typealias Fun<A, B> = (A) -> B
+
+/** Implement composition using g after f notation. */
+inline infix fun <A, B, C> Fun<B, C>.after(crossinline f: Fun<A, B>): Fun<A, C> =
+  { a: A ->
+    this(f(a))
+  }
+
+/** Compose two functions */
+inline infix fun <A, B, C> Fun<A, B>.compose(crossinline g: Fun<B, C>): Fun<A, C> =
+  { a: A ->
+    g(this(a))
+  }

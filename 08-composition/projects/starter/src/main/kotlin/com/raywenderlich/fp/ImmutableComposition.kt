@@ -27,4 +27,5 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+
 package com.raywenderlich.fp

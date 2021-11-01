@@ -40,13 +40,13 @@ fun functionWithAnotherEffect(x: Int): String {
 /*
 fun functionWithAnotherEffect(time: Long, x: Int): String {
   val result = x * x - 1
-  return "Result: $result calculated on $time}"
+  return "Result: $result calculated on $time"
 }
  */
 
 fun functionWithAnotherEffect(time: Long = System.currentTimeMillis(), x: Int): String {
   val result = x * x - 1
-  return "Result: $result calculated on $time}"
+  return "Result: $result calculated on $time"
 }
 
 fun main() {
