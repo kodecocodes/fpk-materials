@@ -66,12 +66,13 @@ fun doubleWithEffect(x: Int): Pair<Int, Updater<MutableCounter>> {
 typealias WithMutation<A, B, S> = (A) -> Pair<B, Updater<S>>
 
 /** WithMutation<A, B, S> Composition */
-inline infix fun <A, B, C, S> WithMutation<A, B, S>.compose(crossinline g: WithMutation<B, C, S>): WithMutation<A, C, S> =
-  { a: A ->
-    val (b, op) = this(a)
-    val (c, op2) = g(b)
-    c to (op compose op2)
-  }
+inline infix fun <A, B, C, S> WithMutation<A, B, S>.compose(
+  crossinline g: WithMutation<B, C, S>
+): WithMutation<A, C, S> = { a: A ->
+  val (b, op) = this(a)
+  val (c, op2) = g(b)
+  c to (op compose op2)
+}
 
 fun main() {
   val composed = ::squareWithEffect compose ::doubleWithEffect compose ::squareWithEffect

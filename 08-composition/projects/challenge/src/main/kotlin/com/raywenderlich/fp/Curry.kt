@@ -77,13 +77,17 @@ fun main() {
 
   /*
   fun comp(a: Int, b: Int): String {
-    val right = (double compose sum.curry())(a)
+    val currySum: (Int) -> (Int) -> Int = sum.curry()
+    val doubleComposeSum: (Int) -> (Int) -> Int =
+      double compose currySum
+    val right: (Int) -> Int = doubleComposeSum(a)
     return (square compose right compose stringify)(b)
   }
    */
 
-  fun comp(a: Int, b: Int): String =
-    b pipe (square compose (a pipe (double compose sum.curry())) compose stringify)
+  fun comp(a: Int, b: Int): String = b pipe
+      (square compose (a pipe
+          (double compose sum.curry())) compose stringify)
 
   println(comp(10, 2))
 

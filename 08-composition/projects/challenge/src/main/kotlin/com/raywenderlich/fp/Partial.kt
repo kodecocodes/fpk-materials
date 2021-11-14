@@ -47,16 +47,17 @@ fun interface CalculatorFactory {
   fun create(db: DB, logger: Logger): Calculator
 }
 
-val calculatorFactoryImpl = CalculatorFactory { db, logger ->
-  object : Calculator {
-    override fun multiply(a: Double, b: Double): Double {
-      val result = a * b
-      db.save(result)
-      logger.log("$a * $b = $result")
-      return result
+val calculatorFactoryImpl =
+  CalculatorFactory { db, logger ->
+    object : Calculator {
+      override fun multiply(a: Double, b: Double): Double {
+        val result = a * b
+        db.save(result)
+        logger.log("$a * $b = $result")
+        return result
+      }
     }
   }
-}
 
 fun main() {
   val db = DB {

@@ -33,25 +33,27 @@ package com.raywenderlich.fp.exercise4
 /** Alias for function returning arrays */
 typealias ToArray<A, B> = (A) -> Array<B>
 
-inline infix fun <A, B, reified C> ToArray<A, B>.compose(crossinline g: ToArray<B, C>): ToArray<A, C> =
-  { a: A ->
-    val bArray = this(a)
-    val cArray = mutableListOf<C>()
-    for (bValue in bArray) {
-      cArray.addAll(g(bValue))
-    }
-    cArray.toTypedArray()
+inline infix fun <A, B, reified C> ToArray<A, B>.compose(
+  crossinline g: ToArray<B, C>
+): ToArray<A, C> = { a: A ->
+  val bArray = this(a)
+  val cArray = mutableListOf<C>()
+  for (bValue in bArray) {
+    cArray.addAll(g(bValue))
   }
+  cArray.toTypedArray()
+}
 
-inline infix fun <A, B, reified C> ToArray<A, B>.composeWithFold(crossinline g: ToArray<B, C>): ToArray<A, C> =
-  { a: A ->
-    this(a).fold(mutableListOf<C>()) { acc, item ->
-      for (bValue in g(item)) {
-        acc.add(bValue)
-      }
-      acc
-    }.toTypedArray()
-  }
+inline infix fun <A, B, reified C> ToArray<A, B>.composeWithFold(
+  crossinline g: ToArray<B, C>
+): ToArray<A, C> = { a: A ->
+  this(a).fold(mutableListOf<C>()) { acc, item ->
+    for (bValue in g(item)) {
+      acc.add(bValue)
+    }
+    acc
+  }.toTypedArray()
+}
 
 val fibo = { n: Int ->
   tailrec fun fiboHelper(a: Int, b: Int, fiboN: Int): Int =
