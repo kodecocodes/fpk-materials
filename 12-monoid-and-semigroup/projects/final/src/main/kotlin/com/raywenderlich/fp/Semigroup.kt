@@ -35,11 +35,10 @@ import pipe
 /** Merge and combine the values in two lists */
 //fun <T> mergeAndCombine(listA: List<T>, listB: List<T>, combine: (T, T) -> T): List<T> {
 //  var i = 0
-//  var j = 0
 //  val result = mutableListOf<T>()
-//  while (i < listA.size || j < listB.size) {
+//  while (i < listA.size || i < listB.size) {
 //    val first = if (i < listA.size) listA[i] else null
-//    val second = if (j < listB.size) listB[i] else null
+//    val second = if (i < listB.size) listB[i] else null
 //    if (first != null && second != null) {
 //      result.add(combine(first, second))
 //    } else if (first != null) {
@@ -48,17 +47,15 @@ import pipe
 //      result.add(second)
 //    }
 //    i++
-//    j++
 //  }
 //  return result
 //}
 fun <T> mergeAndCombine(listA: List<T>, listB: List<T>, semigroup: Semigroup<T>): List<T> {
   var i = 0
-  var j = 0
   val result = mutableListOf<T>()
-  while (i < listA.size || j < listB.size) {
+  while (i < listA.size || i < listB.size) {
     val first = if (i < listA.size) listA[i] else null
-    val second = if (j < listB.size) listB[i] else null
+    val second = if (i < listB.size) listB[i] else null
     if (first != null && second != null) {
       result.add(semigroup.combine(first, second))
     } else if (first != null) {
@@ -67,13 +64,12 @@ fun <T> mergeAndCombine(listA: List<T>, listB: List<T>, semigroup: Semigroup<T>)
       result.add(second)
     }
     i++
-    j++
   }
   return result
 }
 
 /** Semigroup definition */
-public interface Semigroup<T> {
+interface Semigroup<T> {
   val combine: T.(T) -> T
 }
 

@@ -51,11 +51,12 @@ import pipe
 //}
 
 /** Monoid<T> definition with receiver */
-//public interface Monoid<T> {
+//interface Monoid<T> {
 //  val unit: T
 //  val combine: T.(T) -> T // HERE
 //}
-public interface Monoid<T> : Semigroup<T> {
+
+interface Monoid<T> : Semigroup<T> {
   val unit: T
 }
 
