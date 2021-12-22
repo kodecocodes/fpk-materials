@@ -77,6 +77,10 @@ fun booleanToInt(even: Boolean): Int = if (even) 1 else 0
 
 val isEvenInt = ::isEven compose ::booleanToInt
 
+typealias NothingTriage = Pair<Nothing, Triage>
+
+//val nothing1 : NothingTriage = Pair(???, Triage.RED)
+
 /** Example of a Struct */
 data class Struct(val enabled: Boolean, val triage: Triage, val value: Byte)
 
