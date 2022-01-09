@@ -30,38 +30,21 @@
 
 package com.raywenderlich.fp
 
-import pipe
+import com.google.common.truth.Truth
+import org.junit.Test
 
-/** First Monoid<T> definition */
-//interface Monoid<T> {
-//  val unit: T
-//  val combine: (T, T) -> T
-//}
+class StringMonoidTest {
 
-/** Second Monoid<T> definition */
-//interface Monoid<T> {
-//  val unit: T
-//  val combine: (T) -> (T) -> T // HERE
-//}
-
-/** Monoid<T> definition with receiver */
-//public interface Monoid<T> {
-//  val unit: T
-//  val combine: T.(T) -> T // HERE
-//}
-public interface Monoid<T> : Semigroup<T> {
-  val unit: T
-}
-
-/** Monoid<Int> implementation for addition */
-object MonoidIntAdd : Monoid<Int> {
-  override val unit: Int
-    get() = 0
-  override val combine: Int.(Int) -> Int
-    get() = Int::plus
-}
-
-fun main() {
-  val lista = listOf(1, 2, 3, 4, 5, 5, 6, 7, 8, 9)
-  lista.fold(MonoidIntAdd.unit, MonoidIntAdd.combine) pipe ::println
+  @Test
+  fun `test string concat using generators`() {
+    100.times {
+      val stringConcatProp =
+        AssociativeProperty<String>() and
+            IdentityProperty("")
+      val evaluation = stringConcatProp(StringGenerator()) {
+        MonoidStringConcat.combine(it[0], it[1])
+      }
+      Truth.assertThat(evaluation).isTrue()
+    }
+  }
 }

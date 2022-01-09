@@ -44,12 +44,6 @@ import pipe
 //  val combine: (T) -> (T) -> T // HERE
 //}
 
-/** Monoid<T> definition */
-//interface Monoid<T> {
-//  val unit: T
-//  val combine: (T) -> (T) -> T
-//}
-
 /** Monoid<T> definition with receiver */
 //interface Monoid<T> {
 //  val unit: T

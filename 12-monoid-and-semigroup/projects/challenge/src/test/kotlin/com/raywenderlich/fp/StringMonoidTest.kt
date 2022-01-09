@@ -37,7 +37,7 @@ import org.junit.Test
 class StringMonoidTest {
 
   @Test
-  fun `Exercise 5 solution`() {
+  fun `test string concat using generators`() {
     100.times {
       val stringConcatProp =
         AssociativeProperty<String>() and

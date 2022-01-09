@@ -29,3 +29,9 @@
  */
 
 package com.raywenderlich.fp
+
+/** Sum of elements in a List<Int> */
+fun List<Int>.sumList() = fold(0) { a, b -> a + b }
+
+/** Reverse a String */
+fun String.reverseString() = foldRight("") { char, str -> str + char }
