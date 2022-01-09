@@ -43,7 +43,6 @@ infix fun <A, B, C> ((A) -> B).compose(g: (B) -> C): (A) -> C = { a ->
   g(this(a))
 }
 
-
 fun main() {
   //val result = double(square(10))
   val squareAndDouble = ::square compose ::double

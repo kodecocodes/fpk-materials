@@ -38,11 +38,8 @@ package com.raywenderlich.fp
 fun Int.times(fn: () -> Unit) =
   (1..this).forEach { _ -> fn() }
 
-
 fun main() {
   3.times {
     println("Hello")
   }
 }
-
-

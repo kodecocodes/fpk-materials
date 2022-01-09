@@ -35,7 +35,6 @@ fun chrono(fn: () -> Unit): Long {
   return System.currentTimeMillis() - start
 }
 
-
 fun main() {
   val waitOneSec = { Thread.sleep(1000) }
   println(chrono(waitOneSec))

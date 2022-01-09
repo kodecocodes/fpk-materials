@@ -47,7 +47,6 @@ fun strToIntResult(str: String): Result<Int> =
     Result.failure(nfe)
   }
 
-
 fun main() {
   strToIntResult("aaa").map { it * 2 }
 }
