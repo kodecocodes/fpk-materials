@@ -67,18 +67,19 @@ infix fun <E, T, R> ResultAp<E, (T) -> R>.applsg(a: ResultAp<E, T>)
 
 /** Name validation*/
 fun validateNameSg(name: String): ResultAp<ValidationExceptionComposite, String> =
-  if (name.length > 4)
+  if (name.length > 4) {
     Success(name)
-  else
+  } else {
     Error(ValidationExceptionComposite(listOf(ValidationException("Invalid Name"))))
+  }
 
 /** Email validation */
 fun validateEmailSg(email: String): ResultAp<ValidationExceptionComposite, String> =
-  if (email.contains("@"))
+  if (email.contains("@")) {
     Success(email)
-  else
+  } else {
     Error(ValidationExceptionComposite(listOf(ValidationException("Invalid email"))))
-
+  }
 
 fun main() {
   val userBuilder = ::User.curry()
