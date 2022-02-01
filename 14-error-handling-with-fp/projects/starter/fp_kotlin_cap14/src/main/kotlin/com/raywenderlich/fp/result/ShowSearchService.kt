@@ -29,38 +29,3 @@
  */
 
 package com.raywenderlich.fp.result
-
-import com.raywenderlich.fp.model.ScoredShow
-import com.raywenderlich.fp.tools.fetchers.TvShowFetcher
-import com.raywenderlich.fp.tools.parser.TvShowParser
-import kotlinx.serialization.SerializationException
-import java.io.IOException
-
-/** Invokes the fetcher returning an Result<T> */
-fun fetchTvShowResult(query: String): Result<String> = try {
-  Result.success(TvShowFetcher.fetch(query))
-} catch (ioe: IOException) {
-  Result.failure(ioe)
-}
-
-/** Invokes the parser returning an Result<T> */
-fun parseTvShowResult(json: String): Result<List<ScoredShow>> =
-  try {
-    Result.success(TvShowParser.parse(json /* +"sabotage" */))
-  } catch (e: SerializationException) {
-    Result.failure(e)
-  }
-
-/** Composition of fetchTvShowResult and parseTvShowResult */
-fun fetchAndParseTvShowResult(query: String) =
-  fetchTvShowResult(query)
-    .flatMap(::parseTvShowResult)
-
-fun main() {
-  fetchAndParseTvShowResult("Big Bang Theory")
-    .fold(onFailure = {
-      println("Error: $it")
-    }, onSuccess = {
-      println("Result: $it")
-    })
-}

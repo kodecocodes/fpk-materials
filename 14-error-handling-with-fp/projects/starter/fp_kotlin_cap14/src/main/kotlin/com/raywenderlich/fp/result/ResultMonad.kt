@@ -29,4 +29,3 @@
  */
 
 package com.raywenderlich.fp.result
-
