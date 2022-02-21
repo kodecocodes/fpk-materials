@@ -40,7 +40,7 @@ class ValidationException(msg: String) : Exception(msg)
 
 /** Name validation*/
 fun validateName(name: String): ResultAp<ValidationException, String> =
-  if (name.length > 4) Success(name) else Error(ValidationException("Invalid Name"))
+  if (name.length > 4) Success(name) else Error(ValidationException("Invalid name"))
 
 /** Email validation */
 fun validateEmail(email: String): ResultAp<ValidationException, String> =

@@ -70,7 +70,7 @@ fun validateNameSg(name: String): ResultAp<ValidationExceptionComposite, String>
   if (name.length > 4) {
     Success(name)
   } else {
-    Error(ValidationExceptionComposite(listOf(ValidationException("Invalid Name"))))
+    Error(ValidationExceptionComposite(listOf(ValidationException("Invalid name"))))
   }
 
 /** Email validation */

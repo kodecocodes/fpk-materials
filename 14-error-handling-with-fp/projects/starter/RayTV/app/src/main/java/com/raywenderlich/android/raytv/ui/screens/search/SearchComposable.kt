@@ -41,11 +41,13 @@ fun Search(
   val (inputText, updateInputText) = rememberSaveable { mutableStateOf("") }
   val focusRequester = remember { FocusRequester() }
   Scaffold(
+    modifier = modifier,
     topBar = { TopAppBar(title = { Text(stringResource(R.string.app_name)) }) },
     content = {
       val result = searchViewModel.searchState.value
       Column(
         modifier
+          .padding(16.dp)
           .animateContentSize()
           .alpha(if (result == SearchRunning) 0.5F else 1.0F)
       ) {
@@ -58,7 +60,7 @@ fun Search(
           modifier = modifier
             .fillMaxWidth()
             .focusRequester(focusRequester)
-            .padding(2.dp),
+            .padding(bottom = 16.dp),
           value = inputText,
           onValueChange = { newText ->
             updateInputText(newText)
@@ -118,8 +120,7 @@ fun ShowResultComposable(
   LazyColumn(
     modifier = modifier,
     state = scrollState,
-    verticalArrangement = Arrangement.spacedBy(4.dp),
-    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+    verticalArrangement = Arrangement.spacedBy(8.dp),
   ) {
     items(model.size) {
       TvShowItem(modifier, model[it], onClick)
@@ -138,10 +139,13 @@ fun TvShowItem(
       .fillMaxWidth()
       .clickable { onClick(item.show.id) },
     shape = RoundedCornerShape(3.dp),
-    border = BorderStroke(2.dp, Color.LightGray),
-    elevation = 4.dp
+    border = BorderStroke(1.dp, Color.LightGray),
+    elevation = 1.dp
   ) {
-    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
+    Row(
+      modifier = modifier.padding(8.dp),
+      verticalAlignment = Alignment.CenterVertically
+    ) {
       Image(
         painter = rememberImagePainter(
           data = item.show.image?.original ?: R.mipmap.ic_launcher,
@@ -152,9 +156,8 @@ fun TvShowItem(
         contentDescription = "Android Logo",
         modifier = Modifier
           .size(150.dp)
-          .padding(8.dp)
       )
-      Spacer(Modifier.width(10.dp))
+      Spacer(Modifier.width(8.dp))
       Column(modifier = modifier) {
         Text(
           text = item.show.name,

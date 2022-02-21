@@ -45,8 +45,7 @@ fun RayTvApp() {
     if (splashViewModel.splashShowing.value == DISMISSED) {
       NavHost(
         navController = navController,
-        startDestination = Screens.Search.name,
-        modifier = Modifier.padding(4.dp)
+        startDestination = Screens.Search.name
       ) {
         composable(Screens.Search.name) {
           Search { showId ->

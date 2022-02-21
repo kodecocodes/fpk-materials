@@ -97,8 +97,8 @@ fun TvShowDetail(
 @ExperimentalAnimationApi
 @Composable
 fun ShowDetail(modifier: Modifier = Modifier, showDetail: ShowDetail) {
-  Column(modifier) {
-    Row(modifier) {
+  Column(modifier.padding(16.dp)) {
+    Row {
       Image(
         painter = rememberImagePainter(
           data = showDetail.image?.original ?: R.mipmap.ic_launcher,

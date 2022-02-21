@@ -24,7 +24,7 @@ fun Splash(modifier: Modifier = Modifier) {
   Box(
     modifier = Modifier
       .fillMaxSize()
-      .background(color = colorResource(R.color.teal_700))
+      .background(color = colorResource(R.color.greenray))
   ) {
     Image(
       painter = painterResource(id = R.mipmap.ic_launcher),

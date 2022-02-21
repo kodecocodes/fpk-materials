@@ -37,7 +37,7 @@ import kotlinx.serialization.json.Json
 /** Parser for the JSON */
 object TvShowParser {
 
-  /** Parses the json in input */
+  /** Parses the input json */
   fun parse(json: String): List<ScoredShow> = Json {
     ignoreUnknownKeys = true
   }.decodeFromString<List<ScoredShow>>(ListSerializer(ScoredShow.serializer()), json)
