@@ -9,6 +9,10 @@ plugins {
 android {
   compileSdk 31
 
+  dexOptions {
+    javaMaxHeapSize "4G"
+  }
+
   defaultConfig {
     applicationId "com.raywenderlich.android.raytv"
     minSdk 24
