@@ -35,7 +35,7 @@ import com.raywenderlich.fp.lib.*
 
 val products = FList.of(
   Product("1", "Eggs"),
-  Product("2", "Flavor"),
+  Product("2", "Flour"),
   Product("3", "Cake"),
   Product("4", "Pizza"),
   Product("5", "Water")
