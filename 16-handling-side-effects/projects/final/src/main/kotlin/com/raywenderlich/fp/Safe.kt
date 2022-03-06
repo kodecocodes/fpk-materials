@@ -43,7 +43,7 @@ val safeReadName: (World) -> Pair<Result<String>, World> = { w: World ->
 }
 
 val safeReadNameError: (World) -> Pair<Result<String>, World> = { w: World ->
-  Result.failure<String>(RuntimeException("Something wrong!")) to World
+  Result.failure<String>(RuntimeException("Something went wrong!")) to World
 }
 
 val safeReadNameT: WorldT<Result<String>> = safeReadName

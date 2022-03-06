@@ -63,7 +63,7 @@ val printStringT: (String) -> WorldT<Unit> = { str: String ->
   }
 }
 
-/** Using myOp foraskNameAndPrintGreetings */
+/** Using myOp for askNameAndPrintGreetings */
 fun askNameAndPrintGreetingsT(): WorldT<Unit> =
   printStringT("What's your name? ") myOp { _ ->
     readNameT myOp { name ->

@@ -64,6 +64,8 @@ fun <T, R> IO<T>.ap(
     fnValue(t) to w2
   }
 
+infix fun <A, B> IO<(A) -> B>.appl(a: IO<A>) = a.ap(this)
+
 /** IO<T> as Monad */
 fun <A, B> IO<A>.flatMap(
   fn: (A) -> IO<B>
