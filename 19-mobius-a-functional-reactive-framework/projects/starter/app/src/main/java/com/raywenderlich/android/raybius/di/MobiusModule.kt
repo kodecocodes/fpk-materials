@@ -50,7 +50,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
 
 @Module(includes = arrayOf(MobiusModule.Binders::class))
 @InstallIn(ActivityComponent::class)
@@ -69,23 +68,6 @@ class MobiusModule {
 
   @Provides
   fun provideLogic(): TvShowUpdate = tvShowLogic
-
-  @Provides
-  fun provideEffectHandler(
-    uiHandler: UIEffectHandler,
-    apiRequestHandler: ApiRequestHandler
-  ): TvShowEffectHandler =
-    RxMobius.subtypeEffectHandler<TvShowEffect, TvShowEvent>()
-      .addTransformer(SearchTvShow::class.java, apiRequestHandler::handleSearchTvShow)
-      .addConsumer(
-        DisplayErrorMessage::class.java, uiHandler::handleErrorMessage,
-        AndroidSchedulers.mainThread()
-      )
-      .addConsumer(
-        HideKeyboard::class.java, uiHandler::handleHideKeyboardMessage,
-        AndroidSchedulers.mainThread()
-      )
-      .build();
 
   @Provides
   fun provideEventSource(): TvShowEventSource {
@@ -108,4 +90,5 @@ class MobiusModule {
   @Provides
   fun provideMobiusController(factory: TvShowMobiusLoopFactory): TvShowMobiusController =
     MobiusAndroid.controller(factory, TvShowModel())
+
 }
