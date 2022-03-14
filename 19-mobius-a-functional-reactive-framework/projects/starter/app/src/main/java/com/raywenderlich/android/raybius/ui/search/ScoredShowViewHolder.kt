@@ -36,7 +36,6 @@ package com.raywenderlich.android.raybius.ui.search
 
 import androidx.recyclerview.widget.RecyclerView
 import com.raywenderlich.android.raybius.databinding.ShowResultRowBinding
-import com.raywenderlich.android.raybius.ui.bindScoredShow
 import com.raywenderlich.fp.model.ScoredShow
 
 /** ViewHolder for the ScoredShow model */

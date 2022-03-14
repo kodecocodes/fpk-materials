@@ -32,7 +32,7 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.raybius.ui
+package com.raywenderlich.android.raybius.ui.search
 
 import coil.load
 import com.raywenderlich.android.raybius.R

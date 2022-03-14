@@ -32,7 +32,7 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.raybius.ui.search
+package com.raywenderlich.android.raybius.ui.detail
 
 import android.text.Html
 import android.view.View

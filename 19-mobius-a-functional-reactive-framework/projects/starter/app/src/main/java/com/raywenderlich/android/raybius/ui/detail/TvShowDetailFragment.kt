@@ -44,7 +44,6 @@ import com.raywenderlich.android.raybius.databinding.FragmentDetailBinding
 import com.raywenderlich.android.raybius.mobius.TvShowEvent
 import com.raywenderlich.android.raybius.mobius.TvShowModel
 import com.raywenderlich.android.raybius.ui.MobiusHost
-import com.raywenderlich.android.raybius.ui.search.logic
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
