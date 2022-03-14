@@ -37,7 +37,7 @@ package com.raywenderlich.android.raybius.mobius.handlers
 import com.raywenderlich.android.raybius.api.fetchAndParseTvShowDetailResult
 import com.raywenderlich.android.raybius.api.fetchAndParseTvShowResult
 import com.raywenderlich.android.raybius.mobius.*
-import com.raywenderlich.fp.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ScoredShow
 import io.reactivex.Observable
 import javax.inject.Inject
 

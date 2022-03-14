@@ -34,8 +34,8 @@
 
 package com.raywenderlich.android.raybius.mobius
 
-import com.raywenderlich.fp.model.ScoredShow
-import com.raywenderlich.fp.model.ShowDetail
+import com.raywenderlich.android.raybius.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ShowDetail
 
 sealed class TvShowEvent
 data class InputTextChanged(val text: String) : TvShowEvent()

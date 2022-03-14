@@ -30,8 +30,8 @@
 
 package com.raywenderlich.android.raybius.api.tools.parsers
 
-import com.raywenderlich.fp.model.ScoredShow
-import com.raywenderlich.fp.model.ShowDetail
+import com.raywenderlich.android.raybius.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ShowDetail
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 

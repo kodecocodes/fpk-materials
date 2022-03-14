@@ -32,12 +32,12 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.raybius.ui
+package com.raywenderlich.android.raybius.ui.search
 
 import coil.load
 import com.raywenderlich.android.raybius.R
 import com.raywenderlich.android.raybius.databinding.ShowResultRowBinding
-import com.raywenderlich.fp.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ScoredShow
 
 /** Bind the model to the row */
 fun ShowResultRowBinding.bindScoredShow(model: ScoredShow, onItemSelected: (Int) -> Unit) {

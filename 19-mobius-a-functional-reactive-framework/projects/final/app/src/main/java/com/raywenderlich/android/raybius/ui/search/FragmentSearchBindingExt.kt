@@ -32,7 +32,7 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.raybius.ui
+package com.raywenderlich.android.raybius.ui.search
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -43,8 +43,7 @@ import com.raywenderlich.android.raybius.mobius.InputTextChanged
 import com.raywenderlich.android.raybius.mobius.SearchButtonClicked
 import com.raywenderlich.android.raybius.mobius.TvShowEvent
 import com.raywenderlich.android.raybius.mobius.TvShowModel
-import com.raywenderlich.android.raybius.ui.search.ScoredShowAdapter
-import com.raywenderlich.fp.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ScoredShow
 import com.spotify.mobius.functions.Consumer
 
 /**

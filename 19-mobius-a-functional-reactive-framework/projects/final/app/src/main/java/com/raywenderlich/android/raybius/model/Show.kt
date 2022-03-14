@@ -28,7 +28,7 @@
  *
  */
 
-package com.raywenderlich.fp.model
+package com.raywenderlich.android.raybius.model
 
 import kotlinx.serialization.Serializable
 

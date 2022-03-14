@@ -32,7 +32,7 @@
  * THE SOFTWARE.
  */
 
-package com.raywenderlich.android.raybius.ui.search
+package com.raywenderlich.android.raybius.ui.detail
 
 import android.text.Html
 import android.view.View
@@ -40,7 +40,7 @@ import coil.load
 import com.raywenderlich.android.raybius.R
 import com.raywenderlich.android.raybius.databinding.FragmentDetailBinding
 import com.raywenderlich.android.raybius.mobius.TvShowModel
-import com.raywenderlich.fp.model.ShowDetail
+import com.raywenderlich.android.raybius.model.ShowDetail
 
 /** UI logic for the Detail Activity */
 fun FragmentDetailBinding.logic(model: TvShowModel) {

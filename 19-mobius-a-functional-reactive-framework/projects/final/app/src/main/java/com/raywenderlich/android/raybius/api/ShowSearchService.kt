@@ -32,8 +32,8 @@ package com.raywenderlich.android.raybius.api
 
 import com.raywenderlich.android.raybius.api.tools.fetchers.TvShowFetcher
 import com.raywenderlich.android.raybius.api.tools.parsers.TvShowParser
-import com.raywenderlich.fp.model.ScoredShow
-import com.raywenderlich.fp.model.ShowDetail
+import com.raywenderlich.android.raybius.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ShowDetail
 import com.raywenderlich.fp.result.flatMap
 import kotlinx.serialization.SerializationException
 import java.io.IOException

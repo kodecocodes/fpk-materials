@@ -39,7 +39,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.raywenderlich.android.raybius.databinding.ShowResultRowBinding
-import com.raywenderlich.fp.model.ScoredShow
+import com.raywenderlich.android.raybius.model.ScoredShow
 
 private val DIFF_UTIL = object : DiffUtil.ItemCallback<ScoredShow>() {
   override fun areItemsTheSame(oldItem: ScoredShow, newItem: ScoredShow): Boolean =

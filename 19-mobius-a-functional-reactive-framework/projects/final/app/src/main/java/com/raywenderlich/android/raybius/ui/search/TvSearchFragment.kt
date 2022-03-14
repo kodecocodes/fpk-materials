@@ -45,8 +45,6 @@ import com.raywenderlich.android.raybius.mobius.ItemClicked
 import com.raywenderlich.android.raybius.mobius.TvShowEvent
 import com.raywenderlich.android.raybius.mobius.TvShowModel
 import com.raywenderlich.android.raybius.ui.MobiusHost
-import com.raywenderlich.android.raybius.ui.initUI
-import com.raywenderlich.android.raybius.ui.logic
 import com.spotify.mobius.functions.Consumer
 import dagger.hilt.android.AndroidEntryPoint
 
