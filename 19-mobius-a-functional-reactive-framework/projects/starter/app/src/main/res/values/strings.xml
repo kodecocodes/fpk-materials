@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">Raybius</string>
+  <string name="tvshow_input_hint">Enter the TV show to search</string>
+  <string name="help_message">Insert the name of the TV Show you want to search in the text input field.</string>
+  <string name="generic_error_message">Something went wrong! Please, retry later!</string>
+  <string name="search">Search</string>
+</resources>
