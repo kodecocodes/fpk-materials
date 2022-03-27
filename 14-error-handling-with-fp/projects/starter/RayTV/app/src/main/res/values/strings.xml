@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">RayTV</string>
+  <string name="search_hint">Enter TV show here</string>
+  <string name="no_result_message">No Result Available</string>
+  <string name="help_message">Enter the name of the TV show you’d like to search for in the text box above.</string>
+  <string name="language_label">Language</string>
+  <string name="genre_label">Genre</string>
+  <string name="premiered_label">Premiered</string>
+  <string name="ended_label">Ended</string>
+  <string name="summary_label">Summary</string>
+  <string name="error_message">Oops! Something went wrong! Please retry later!</string>
+
+  <string name="api_credits">Credits APIs tvmaze.com</string>
+
+</resources>
