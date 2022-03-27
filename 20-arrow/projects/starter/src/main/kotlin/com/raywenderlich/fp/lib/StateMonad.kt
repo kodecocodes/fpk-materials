@@ -28,9 +28,8 @@
  *
  */
 
-package com.raywenderlich.fp
+package com.raywenderlich.fp.lib
 
-import com.raywenderlich.fp.lib.State
 import com.raywenderlich.fp.lib.invoke
 
 /** flatMap implementation for the State monad */

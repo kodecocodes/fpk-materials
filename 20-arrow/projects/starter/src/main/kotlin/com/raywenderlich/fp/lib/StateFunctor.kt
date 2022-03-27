@@ -28,10 +28,8 @@
  *
  */
 
-package com.raywenderlich.fp
+package com.raywenderlich.fp.lib
 
-import com.raywenderlich.fp.lib.Fun
-import com.raywenderlich.fp.lib.State
 import com.raywenderlich.fp.lib.invoke
 
 /** State as a Functor */

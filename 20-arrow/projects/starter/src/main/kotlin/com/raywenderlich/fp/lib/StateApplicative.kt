@@ -28,10 +28,8 @@
  *
  */
 
-package com.raywenderlich.fp
+package com.raywenderlich.fp.lib
 
-import com.raywenderlich.fp.lib.Chain2
-import com.raywenderlich.fp.lib.State
 import com.raywenderlich.fp.lib.invoke
 
 fun <S, A, B, C> State<S, Pair<A, B>>.map2(
