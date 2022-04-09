@@ -65,7 +65,7 @@ fun mainWithFlatMap() {
   if (searchResultOption != null) {
     printScoresShow(searchResultOption)
   } else {
-    println("Something wrong happened!")
+    println("Something went wrong!")
   }
 }
 
@@ -74,7 +74,7 @@ suspend fun mainWithComprehension() {
   if (searchResultOption != null) {
     printScoresShow(searchResultOption)
   } else {
-    println("Something wrong happened!")
+    println("Something went wrong!")
   }
 }
 

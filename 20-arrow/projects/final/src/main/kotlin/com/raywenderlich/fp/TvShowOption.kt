@@ -68,6 +68,6 @@ fun main() {
       println("No Results!")
     }
   } else {
-    println("Something wrong happened!")
+    println("Something went wrong!")
   }
 }
