@@ -12,5 +12,5 @@ We’ve set up an official forum for the book at [https://forums.raywenderlich.c
 
 | Branch                                                                            | Edition | Release Date |
 | --------------------------------------------------------------------------------- |:-------:|:------------:|
-| [editions/1.0](https://github.com/raywenderlich/fpk-materials/tree/editions/1.0) | 1.0     | 2022-04-27   |
+| [editions/1.0](https://github.com/raywenderlich/fpk-materials/tree/editions/1.0) | 1.0     | 2022-05-04   |
 
