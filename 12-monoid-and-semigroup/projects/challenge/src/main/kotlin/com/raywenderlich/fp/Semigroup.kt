@@ -58,7 +58,7 @@ fun <T> mergeAndCombine(listA: List<T>, listB: List<T>, semigroup: Semigroup<T>)
   val result = mutableListOf<T>()
   while (i < listA.size || j < listB.size) {
     val first = if (i < listA.size) listA[i] else null
-    val second = if (j < listB.size) listB[i] else null
+    val second = if (j < listB.size) listB[j] else null
     if (first != null && second != null) {
       result.add(semigroup.combine(first, second))
     } else if (first != null) {
